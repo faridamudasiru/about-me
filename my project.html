@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farida Mudasiru</title>
+<style>
+    
+  :root{
+    --navy: #0a5a4b;
+    --light: #EDF2F9;
+    --heading: #116b70;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{
+    font-family: Arial,Helvetica, sans-serif;
+    color:#222;
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 240px 1fr;
+    line-height:1.5;
+  }
+  /* HEADER */
+  .header{
+    grid-area: header;
+    background: var(--navy);
+    color:white;
+    padding:16px 24px;
+    display:flex;
+    justify-content:space-between;
+  }
+  .header h1{font-size:20px;}
+  .header p{font-size:12px; opacity:0.9;}
+  .nav{display:flex; gap:14px; font-size:13px; font-weight:bold;}
+  .nav a{color:white; text-decoration:none;}
+  
+  /* SIDEBAR - Real sidebar now */
+  .sidebar{
+    grid-area: sidebar;
+    background: var(--light);
+    padding:20px;
+    border-right:1px solid #d5deeb;
+  }
+  .sidebar h3{color:var(--heading); font-size:14px; margin-bottom:8px;}
+  .sidebar p{font-size:12.5px; margin-bottom:14px;}
+
+  /* MAIN */
+  .main{
+    grid-area: main;
+    padding:22px 30px;
+  }
+  .main h2{color:var(--heading); font-size:18px; margin-bottom:12px;}
+  .about img{width:155px; border-radius:2px;}
+  .caption{font-size:10px; font-style:italic; color:#555; margin:4px 0 12px;}
+  .para{font-size:13.5px; margin-bottom:10px;}
+
+  /* TABLE - with lines */
+  .table{
+    width:100%;
+    border-collapse: collapse;
+    font-size:13px;
+    margin-top:8px;
+  }
+  .table th{background:var(--navy); color:white; text-align:left; padding:7px 10px;}
+  .table td{padding:7px 10px; border-bottom:1px solid #eee;}
+  .table tr:nth-child(even){background:var(--light);}
+
+  /* HOBBIES */
+  .hobbies{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:12px;
+    margin-top:10px;
+  }
+  .card{
+    border:1px solid #e6e9ef;
+    border-radius:8px;
+    padding:12px 14px;
+  }
+  .card b{color:var(--heading); font-size:12px; display:block; margin-bottom:4px;}
+  .card span{font-size:11.5px;}
+
+  /* FOOTER */
+  .footer{
+    grid-area: footer;
+    background:var(--navy);
+    color:white;
+    padding:30px 24px;
+    font-size:12px;
+  }
+  .footer a{color:#f7c94d; text-decoration:none;}
+
+  @media(max-width:700px){
+    body{
+      grid-template-areas:"header" "main" "sidebar" "footer";
+      grid-template-columns:1fr;
+    }
+    .hobbies{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div>
+    <h1 class="header_title">Farida Mudasiru</h1>
+    <p class="header_subtitle">Student, ITW 204 Advance Website Programming, Wisconsin International<br>University College</p>
+  </div>
+  <nav>
+    <div class="nav">
+      <a href="#about">About</a>
+      <a href="#facts">Quick Facts</a>
+      <a href="#hobbies">Hobbies</a>
+    </div>
+    <div class="nav" style="margin-top:8px;"><a href="#contact">Contact</a></div>
+  </nav>
+</header>
+
+<aside class="sidebar">
+  <h3 class="sidebar_heading">Fun Fact</h3>
+  <p class="sidebar_text">This is the exact "About Me" project I am asking every one of you to build with me this semester.</p>
+  <p class="sidebar_text">Since Week 1 I've added CSS variables, BEM, Flexbox, and now Grid to this very page.</p>
+</aside>
+
+<main class="main">
+    <section id="about">
+  <h2 class="main_heading">About Me</h2>
+    <img src="images/farida.jpeg" alt="Farida Mudasiru" height="300" width="200">
+    <p class="about_caption">Farida Mudasiru, ITW 204 student, 2026</p>
+    <p class="abou_para">My name is Farida Mudasiru. I study ITW 204,Advanced Website Programming at Wisconsin International University College, Ghana.This week I learnt CSS Grid.</p>
+    <p class="para">My Fun Fact box has moved into a real sidebar, and the whole page layout is now controlled by <code>grid-template-areas</code> instead of just flowing top to bottom.</p>
+    </section>
+<section id="facts">
+  <h2 class="main_heading">Quick Facts</h2>
+  <p class="facts_sub">A few quick facts about me</p>
+  <table class="table">
+    <tr>
+        <th>Category</th>
+        <th>Detail</th>
+    </tr>
+    <tr>
+        <td><b>Role</b></td>
+        <td>Student, ITW 204 Advance Website Programming</td>
+    </tr>
+    <tr class="table_row--alt">
+        <td><b>Institution</b></td>
+        <td>Wisconsin International University College, Ghana</td>
+    </tr>
+    <tr><td><b>Focus Area</b></td>
+        <td>Backend Web Development</td>
+    </tr>
+    <tr class="table_row--alt">
+        <td><b>Favourite Language</b></td>
+        <td>JavaScript</td>
+    </tr>
+    <tr>
+        <td><b>Email</b></td><td>faridamudasiru25@gmail.com</td></tr>
+  </table>
+  </section>
+<section id="hobbies">
+  <h2 class="main_heading">Hobbies & Interests</h2>
+  <div class="hobbies_grid">
+    <div class="card">
+        <p class="card_title">Web Design</p>
+        <p class="card_text">Building small websites and experimenting with CSS layouts.</p>
+        </div>
+    <div class="card">
+        <p class="card_title">Documentaries</p>
+        <p class="card_text">Watching documentaries and learning about different cultures.</p>
+        </div>
+    <div class="card">
+        <p class="card_title">Cooking</p>
+        <p class="card_text">Watching new cooking vlogs on laptop and phone.</p>
+    </div>
+    <div class="card">
+        <p class="card_title">JavaScript</p>
+        <p class="card_text">Reading about new JavaScript frameworks and trying small demos.</p>
+    </div>
+</div>
+<section>
+
+</main>
+
+<footer class="footer" id="contact">
+  <p>Email: <a href="mailto:faridamudasiru25@gmail.com">faridamudasiru25@gmail.com</a></p>
+  <br>
+  <p>© 2026 Farida Mudasiru. Built for ITW 204, Wisconsin International University College.</p>
+</footer>
+
+</body>
+</html>
